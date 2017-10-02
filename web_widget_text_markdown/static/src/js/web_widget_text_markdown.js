@@ -1,11 +1,17 @@
-openerp.web_widget_text_markdown = function (oe) {
+/* © 2017 Phuc.nt - <phuc.nt@komit-consulting.com>
+ * License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
+odoo.define("web_widget_text_markdown.bootstrap_markdown",
+            function (require) {
+    "use strict";
 
-    var _lt = oe.web._lt;
+    var core = require('web.core');
+    var form_common = require('web.form_common');
+    var formats = require ("web.formats");
 
-    oe.web.form.widgets.add('bootstrap_markdown', 'openerp.web_widget_text_markdown.FieldTextMarkDown');
+    var _lt = core._lt;
 
-    oe.web_widget_text_markdown.FieldTextMarkDown = oe.web.form.AbstractField.extend(
-        oe.web.form.ReinitializeFieldMixin,
+    var FieldTextMarkDown = form_common.AbstractField.extend(
+        form_common.ReinitializeFieldMixin,
         {
 
             template: 'FieldMarkDown',
@@ -23,7 +29,7 @@ openerp.web_widget_text_markdown = function (oe) {
             },
 
             parse_value: function(val, def) {
-                return oe.web.parse_value(val, this, def);
+                return formats.parse_value(val, this, def);
             },
 
             initialize_content: function () {
@@ -32,7 +38,11 @@ openerp.web_widget_text_markdown = function (oe) {
                 //  - BUT NOT when switching to next object.
                 this.$txt = this.$el.find('textarea[name="' + this.name + '"]');
                 if (!this.get('effective_readonly')) {
-                    this.$txt.markdown({autofocus: false, savable: false});
+                    this.$txt.markdown({
+                        autofocus: false,
+                        savable: false,
+                        iconlibrary: "fa"
+                    });
                 }
                 this.old_value = null; // will trigger a redraw
             },
@@ -58,7 +68,7 @@ openerp.web_widget_text_markdown = function (oe) {
             _get_raw_value: function() {
                 if (this.$txt === false)
                     return '';
-                    return this.$txt.val();
+                return this.$txt.val();
             },
 
             render_value: function () {
@@ -82,8 +92,12 @@ openerp.web_widget_text_markdown = function (oe) {
             },
 
             format_value: function (val, def) {
-                return oe.web.format_value(val, this, def);
+                return formats.format_value(val, this, def);
             }
         }
     );
-};
+
+    core.form_widget_registry.add('bootstrap_markdown',
+     FieldTextMarkDown);
+
+});

@@ -11,7 +11,7 @@ This module adds a new widget for text field in form view on Odoo:
 Installation
 ============
 
-It was tested on openerp trunk, 8.0 branch.
+It was tested on openerp trunk, 10.0 branch.
 
 Usage
 =====
@@ -48,6 +48,16 @@ Contributors
 ------------
 
 * Nicolas Jeudy <nicolas@sudokeys.com>
+* Nguyen Tan Phuc <phuc.nt@komit-consulting.com>
+
+Do not contact contributors directly about support or help with technical issues.
+
+Funders
+-------
+
+The development of this module has been financially supported by:
+
+* Komit https://komit-consulting.com
 
 Maintainer
 ----------
