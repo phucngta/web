@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2017 Phuc.nt - <phuc.nt@komit-consulting.com>
+# Copyright 2017 phucngta - <phuc.nt@komit-consulting.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
@@ -12,6 +12,9 @@
     'website': 'http://www.komit-consulting.com',
     'depends': [
         'base', 'web'
+    ],
+    'demo': [
+        "demo/bootstrap_markdown.xml",
     ],
     'data': [
         'views/main.xml',

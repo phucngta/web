@@ -1,4 +1,4 @@
-/* © 2017 Phuc.nt - <phuc.nt@komit-consulting.com>
+/* Copyright 2017 phucngta - <phuc.nt@komit-consulting.com>
  * License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
 odoo.define("web_widget_text_markdown.bootstrap_markdown",
             function (require) {

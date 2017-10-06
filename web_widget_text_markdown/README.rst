@@ -8,11 +8,6 @@ This module adds a new widget for text field in form view on Odoo:
 
 [1]: http://www.codingdrama.com/bootstrap-markdown/    "bootstrap-markdown"
 
-Installation
-============
-
-It was tested on openerp trunk, 10.0 branch.
-
 Usage
 =====
 
